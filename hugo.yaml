@@ -5,7 +5,7 @@ languageCode: "pt-BR"
 # Para blog, normalmente faz sentido expor RSS na home
 outputs:
   home: [HTML, RSS]
-  
+
 services:
   disqus:
     shortname: "berserk.iT"

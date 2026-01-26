@@ -5,3 +5,7 @@ resources/
 
 # Editor
 .vscode/
+
+# Theme folder (usando Hugo Modules + _vendor)
+/themes/
+

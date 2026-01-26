@@ -1,0 +1,34 @@
+<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} RSS Feed" href="{{ "index.xml" | absURL }}" />
+
+<style>
+  /* Embeds responsivos (útil para iframes variados) */
+  .embed-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .embed-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Legibilidade para textos longos e técnicos */
+  main {
+    line-height: 1.6;
+    font-size: 18px;
+  }
+
+  /* Evita “explodir” layout com linhas longas em código */
+  .hextra-code-block pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+</style>
