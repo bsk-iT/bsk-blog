@@ -1,17 +1,6 @@
 ---
-title: My Site
-toc: false
+title: berserk.iT Blog
 ---
 
-This is the landing page.
+## 2026 - January
 
-## Explore
-
-{{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
-{{< /cards >}}
-
-## Documentation
-
-For more information, visit [Hextra](https://imfing.github.io/hextra).
