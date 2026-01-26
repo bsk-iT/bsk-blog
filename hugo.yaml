@@ -41,12 +41,12 @@ menu:
         icon: rss
     - name: GitHub
       weight: 5
-      url: "https://github.com/bsk-iT/bsk-blog"
+      url: "https://github.com/bsk-iT"
       params:
         icon: github
     - name: Twitter
       weight: 6
-      url: "https://twitter.com/"
+      url: "https://x.com/brunOcuberO"
       params:
         icon: x-twitter
 
