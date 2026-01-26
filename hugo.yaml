@@ -1,5 +1,14 @@
 # Hugo configuration file
-title: My Site
+title: "berserk.iT"
+languageCode: "pt-BR"
+
+# Para blog, normalmente faz sentido expor RSS na home
+outputs:
+  home: [HTML, RSS]
+  
+services:
+  disqus:
+    shortname: "berserk.iT"
 
 # import hextra as module
 module:
@@ -7,33 +16,32 @@ module:
     - path: github.com/imfing/hextra
 
 markup:
-  # allow raw html
   goldmark:
     renderer:
       unsafe: true
-
-  # enable hextra syntax highlight
   highlight:
     noClasses: false
 
 menu:
   main:
-    - name: Docs
-      pageRef: /docs
+    - name: Início
+      pageRef: /
       weight: 1
     - name: About
       pageRef: /about
       weight: 2
-    - name: Contact ↗
-      url: "https://github.com/imfing"
-      weight: 3
     - name: Search
-      weight: 4
+      weight: 3
       params:
         type: search
+    - name: RSS
+      weight: 4
+      url: "/index.xml"
+      params:
+        icon: rss
     - name: GitHub
       weight: 5
-      url: "https://github.com/imfing/hextra-starter-template"
+      url: "https://github.com/bsk-iT/bsk-blog"
       params:
         icon: github
     - name: Twitter
@@ -48,9 +56,24 @@ params:
     displayLogo: false
 
   footer:
-    displayCopyright: false
+    displayCopyright: true
     displayPoweredBy: true
 
+  # Recomendo DESABILITAR editURL (isso é do starter template)
   editURL:
-    enable: true
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+    enable: false
+
+  # Opcional, mas útil se você pretende embedar vídeos
+  youtubeDefaults:
+    iframeAllowList: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy: "no-referrer"
+    iframeStyle: "border:0; width:100%; aspect-ratio:16/9;"
+
+  theme:
+    default: light
+
+  author:
+    name: "Bruno Cubero"
+    email: "bruno.cubero@proton.me"
+
+  description: "DESCRIÇÃO CURTA DO BLOG (SEO)."
