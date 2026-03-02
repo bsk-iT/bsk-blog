@@ -1,6 +1,6 @@
 ---
 title: "Home Server - Por que montar e o hardware escolhido"
-date: "2026-03-02T15:00:00-03:00"
+date: 2026-03-02T15:00:00-03:00
 slug: home-server-por-que-montar-e-hardware-escolhido
 tags:
   - homelab
@@ -14,9 +14,9 @@ Há um tempo venho adiando montar um Home Server. A ideia sempre esteve na cabe�
 
 ## O problema com o streaming
 
-O primeiro foi o streaming. Não que eu seja contra pagar por um serviço, o problema é a imprevisibilidade. Títulos somem do catálogo sem aviso. Animes que eu queria assistir com calma de repente não estão mais disponíveis. Séries antigas que nunca chegaram a nenhuma plataforma. Filmes de nicho que existem num catálogo hoje e somem amanhã.
+O primeiro foi o streaming. Não que eu seja contra pagar por um serviço, o problema é a imprevisibilidade. Títulos "somem" do catálogo sem aviso. Animes que eu queria assistir novamente de repente não estão mais disponíveis. Séries antigas que nunca chegaram a nenhuma plataforma. Filmes de nicho que existem num catálogo hoje e "somem" amanhã.
 
-Quero ter controle sobre o que assisto, quando assisto e em qual dispositivo. Um servidor de mídia próprio resolve isso.
+> **Quero ter controle sobre o que assisto, quando assisto e em qual dispositivo. Um servidor de mídia próprio resolve isso.**
 
 O segundo motivo foi estudo. Trabalho com tecnologia e sempre quis ter um ambiente local para testar coisas, subir serviços, experimentar configurações sem depender de nuvem ou de uma máquina que uso no dia a dia.
 
@@ -32,7 +32,7 @@ Eu queria escolher as peças. Queria entender o que estava rodando embaixo. Quer
 
 ## Por que o Proxmox
 
-Foi então que cheguei no **Proxmox Virtual Environment**. É um hipervisor tipo 1, ou seja, roda direto no hardware sem sistema operacional por baixo, baseado em Debian Linux. Gratuito, open-source, com interface web completa e usado em ambientes corporativos de verdade.
+Foi então que cheguei no **Proxmox VE**. É um hipervisor tipo 1, ou seja, roda direto no hardware sem sistema operacional por baixo, baseado em Debian Linux. Gratuito, open-source, com interface web completa e usado em ambientes corporativos de verdade.
 
 A proposta é simples: em vez de um servidor físico por serviço, você virtualiza tudo. Cada aplicação roda numa VM ou container isolado, compartilhando o mesmo hardware. O Proxmox gerencia isso por uma interface web, sem precisar de teclado e monitor conectados à máquina.
 
@@ -44,7 +44,9 @@ Decisão tomada. Agora era escolher o hardware.
 
 ### Placa-mãe Topton N5105
 
-A Topton N5105 vem com o **Intel Celeron N5105** soldado na placa: quatro núcleos, quatro threads, TDP de **10W**. Esse número foi o que me chamou atenção logo de cara. Um servidor que fica ligado 24/7 tem que ser eficiente em energia.
+A Topton N5105 vem com o **Intel Celeron N5105** soldado na placa: quatro núcleos, quatro threads, TDP de **10W**. Esse número foi o que me chamou atenção logo de cara. 
+
+> **Um servidor que fica ligado 24/7 tem que ser eficiente em energia.**
 
 Além do consumo baixo, o que convenceu foi o conjunto de I/O:
 
@@ -95,7 +97,7 @@ Para quem vai virtualizar, RAM é o recurso mais crítico. Cada VM precisa de me
 
 ### Fonte Cooler Master G500 Gold 500W
 
-Sim, 500W para uma placa com TDP de 10W parece exagero. Mas tem uma razão.
+*Sim, 500W para uma placa com TDP de 10W parece exagero. Mas tem uma razão.*
 
 Uma fonte **80 Plus Gold** opera com eficiência acima de 90% na maior parte da curva de carga. Fontes baratas sem certificação perdem mais energia convertendo AC em DC, o que a comunidade chama de **vampirismo energético**: watts que saem da tomada mas nunca chegam nos componentes. Com o servidor rodando 24/7, esse desperdício aparece na conta de luz mês a mês.
 
@@ -116,4 +118,4 @@ Além disso, uma fonte dimensionada com folga trabalha longe do limite, o que si
 
 ---
 
-Com o hardware definido, o próximo passo foi instalar o Proxmox. Isso fica para o próximo post, bons estudos.
+Com o hardware definido, o próximo passo foi instalar o Proxmox. Isso fica para o próximo post.

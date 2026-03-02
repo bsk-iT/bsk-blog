@@ -107,28 +107,30 @@ Atualize `content/_index.md` para listar o novo post na página inicial.
 ```yaml
 ---
 title: "Título do Post"
-date: "2026-09-10T15:00:00-03:00"
-slug: titulo-do-post
+slug: "titulo-do-post"
+date: 2026-03-01T14:00:00-03:00
 draft: false
+tags:
+  - Linux
+  - Homelab
 ---
 ```
 
 Campos adicionais suportados pelo Hextra:
 
 ```yaml
-tags:
-  - linux
-  - homelab
 description: "Resumo breve para SEO e listagens."
-draft: true          # Omite o post do build de produção
-math: true           # Ativa KaTeX/MathJax
-mermaid: true        # Ativa diagramas Mermaid
+draft: true      # Omite o post do build de produção
+math: true       # Ativa KaTeX/MathJax
+mermaid: true    # Ativa diagramas Mermaid
 ```
 
 Observações:
-- `date` usa formato ISO 8601 com timezone (`-03:00` para BRT).
+- `title` e `slug` entre aspas duplas.
+- `date` usa formato ISO 8601 com timezone, sem aspas (`-03:00` para BRT).
 - `slug` deve coincidir com o nome do diretório pai do `index.md`.
-- `type: blog` não é necessário quando o post já está sob um diretório de seção.
+- `tags` podem ter maiúsculas (ex: `AI`, `Rust`, `Linux`).
+- `type: blog` **não deve ser usado** — o lookup de template é feito via `layouts/_default/single.html`, que cobre todos os posts independente da seção.
 - `categories` não é utilizado nos posts existentes; preferir `tags`.
 
 ### Convenções de conteúdo
