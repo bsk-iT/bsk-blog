@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-Há um tempo venho adiando montar um Home Server. A ideia sempre esteve na cabeça, mas entre uma coisa e outra, nunca saía do papel. Até que dois problemas começaram a me incomodar o suficiente para eu agir.
+Montei um Home Server. Não foi por luxo nem por hobbyismo: foi porque as alternativas que eu usava estavam me custando tempo demais. A ideia ficou parada na cabeça por meses, sei lá, anos. Até que alguns problemas começaram a me irritar o suficiente pra eu finalmente fazer alguma coisa.
 
 ## O problema com o streaming
 
@@ -18,9 +18,9 @@ O primeiro foi o streaming. Não que eu seja contra pagar por um serviço, o pro
 
 > **Quero ter controle sobre o que assisto, quando assisto e em qual dispositivo. Um servidor de mídia próprio resolve isso.**
 
-O segundo motivo foi estudo. Trabalho com tecnologia e sempre quis ter um ambiente local para testar coisas, subir serviços, experimentar configurações sem depender de nuvem ou de uma máquina que uso no dia a dia.
+O segundo motivo foi armazenamento na nuvem, *sobre isso vou falar em um ouro post* e estudo. Trabalho com tecnologia e sempre quis ter um ambiente local para testar coisas, subir serviços, experimentar configurações sem depender de nuvem ou de uma máquina que uso no dia a dia.
 
-Com esses dois objetivos na cabeça, fui pesquisar.
+Com esses objetivos na cabeça, fui pesquisar.
 
 ## As opções que encontrei
 
