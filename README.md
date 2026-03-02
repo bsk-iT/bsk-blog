@@ -61,7 +61,6 @@ Sugestões, correções e pequenas melhorias são bem-vindas.
 ## Licença
 
 - **Código e configuração do projeto:** MIT License (ver [`LICENSE`](./LICENSE)).
-- 
 - **Conteúdo autoral do blog (posts/páginas e mídias originais):**  
   [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
   (ver [`LICENSE-CONTENT`](./LICENSE-CONTENT)).
