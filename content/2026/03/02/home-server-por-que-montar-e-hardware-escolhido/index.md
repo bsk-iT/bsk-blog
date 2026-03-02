@@ -18,7 +18,7 @@ O primeiro foi o streaming. Não que eu seja contra pagar por um serviço, o pro
 
 > **Quero ter controle sobre o que assisto, quando assisto e em qual dispositivo. Um servidor de mídia próprio resolve isso.**
 
-O segundo motivo foi armazenamento na nuvem, *sobre isso vou falar em um ouro post* e estudo. Trabalho com tecnologia e sempre quis ter um ambiente local para testar coisas, subir serviços, experimentar configurações sem depender de nuvem ou de uma máquina que uso no dia a dia.
+O segundo motivo foi armazenamento na nuvem, *sobre isso vou falar em um outro post*, e também para estudo. Trabalho com tecnologia e sempre quis ter um ambiente local para testar coisas, subir serviços, experimentar configurações sem depender de nuvem ou de uma máquina que uso no dia a dia.
 
 Com esses objetivos na cabeça, fui pesquisar.
 
