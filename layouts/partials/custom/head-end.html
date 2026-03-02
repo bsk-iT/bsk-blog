@@ -25,10 +25,19 @@
     font-size: 18px;
   }
 
-  /* Evita “explodir” layout com linhas longas em código */
+  /* Evita "explodir" layout com linhas longas em código */
   .hextra-code-block pre {
     white-space: pre-wrap;
     word-break: break-word;
     overflow-wrap: anywhere;
+  }
+
+  /* Centraliza o footer em todos os tamanhos de tela */
+  .hextra-footer > div[class*="hextra-max-footer-width"] {
+    justify-content: center !important;
+  }
+
+  .hextra-footer > div[class*="hextra-max-footer-width"] > div {
+    align-items: center !important;
   }
 </style>

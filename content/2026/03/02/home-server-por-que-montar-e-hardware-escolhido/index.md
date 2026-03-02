@@ -44,7 +44,7 @@ Decisão tomada. Agora era escolher o hardware.
 
 ### Placa-mãe Topton N5105
 
-A Topton N5105 vem com o **Intel Celeron N5105** soldado na placa: quatro núcleos, quatro threads, TDP de **10W**. Esse número foi o que me chamou atenção logo de cara. 
+A Topton N5105 vem com o processador **Intel Celeron N5105** soldado na placa: quatro núcleos, quatro threads, TDP de **10W**. Esse número foi o que me chamou atenção logo de cara. 
 
 > **Um servidor que fica ligado 24/7 tem que ser eficiente em energia.**
 
