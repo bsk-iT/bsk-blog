@@ -34,9 +34,15 @@ Eu queria escolher as peças. Queria entender o que estava rodando embaixo. Quer
 
 Foi então que cheguei no **Proxmox VE**. É um hipervisor tipo 1, ou seja, roda direto no hardware sem sistema operacional por baixo, baseado em Debian Linux. Gratuito, open-source, com interface web completa e usado em ambientes corporativos de verdade.
 
-A proposta é simples: em vez de um servidor físico por serviço, você virtualiza tudo. Cada aplicação roda numa VM ou container isolado, compartilhando o mesmo hardware. O Proxmox gerencia isso por uma interface web, sem precisar de teclado e monitor conectados à máquina.
+A proposta é simples: em vez de um servidor físico por serviço, você virtualiza tudo. Cada aplicação roda numa VM ou container isolado (*explico mais abaixo*), compartilhando o mesmo hardware. O Proxmox gerencia isso por uma interface web, sem precisar de teclado e monitor conectados à máquina.
 
 Além do uso prático, é um laboratório para estudar virtualização, redes, containers e storage.
+
+```
+Uma VM (Máquina Virtual) é um computador "simulado" por software, tem seu sistema operacional próprio, CPU e memória dedicados, como se fosse uma máquina separada existindo dentro da física.
+
+Já o container é mais leve: não simula o hardware inteiro, só isola a aplicação do resto do sistema. Compartilha o núcleo do sistema operacional do host e ocupa muito menos espaço e memória. A troca é que você perde o isolamento total que uma VM oferece.
+```
 
 Decisão tomada. Agora era escolher o hardware.
 
@@ -71,7 +77,9 @@ Um segundo M.2, dedicado a projetos e testes que precisam de disco próprio. No 
 
 Para os dados, filmes, séries e backups, escolhi dois **WD Red Plus de 4TB** em **ZFS Mirror**.
 
-O WD Red Plus é feito para NAS: opera 24/7, gira a 5400 RPM (menos calor e menos ruído que 7200 RPM) e tem firmware otimizado para operação contínua. A escolha do Mirror veio de uma lógica que encontrei durante a pesquisa:
+O WD Red Plus é feito para NAS: opera 24/7, 5400 RPM (menos calor e menos ruído que 7200 RPM) e tem firmware otimizado para operação contínua. A escolha do Mirror veio de uma lógica que encontrei durante a pesquisa:
+
+> **Sim, tinha-se feito vários testes com benchmarks, muito bem feito por sinal.**
 
 ```
 Você se importa com seus dados?
@@ -91,7 +99,7 @@ Com dois discos, Mirror é o caminho. Os 4TB ficam disponíveis para uso (o segu
 
 ### 2x Corsair Vengeance 16GB DDR4 2666MHz, 32GB no total
 
-SODIMM, que é o que a placa exige. Duas pentes de 16GB em dual channel, totalizando **32GB**.
+SODIMM, que é o que a placa exige. Dois pentes de 16GB em dual channel, totalizando **32GB**.
 
 Para quem vai virtualizar, RAM é o recurso mais crítico. Cada VM precisa de memória alocada. Com 32GB tenho folga para rodar vários serviços ao mesmo tempo sem o sistema começar a reclamar.
 

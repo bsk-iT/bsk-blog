@@ -59,7 +59,6 @@ params:
     displayCopyright: true
     displayPoweredBy: true
 
-  # Recomendo DESABILITAR editURL (isso é do starter template)
   editURL:
     enable: false
 
