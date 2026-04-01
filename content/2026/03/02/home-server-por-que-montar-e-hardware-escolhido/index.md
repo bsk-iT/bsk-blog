@@ -69,7 +69,7 @@ O disco do sistema: onde o Proxmox fica, junto com ISOs, containers e VMs. O Kin
 
 1TB dá espaço confortável antes de precisar repensar a organização do armazenamento.
 
-### SSD MOVESPEED NVMe PCIe 4.0 x4
+### SSD MOVESPEED 1TB (NVMe PCIe 4.0 x4)
 
 Um segundo M.2, dedicado a projetos e testes que precisam de disco próprio. No momento está rodando um **node Bitcoin**, que escreve e lê continuamente uma quantidade considerável de dados. Ter um disco separado para isso isola o workload e não compete com o sistema principal.
 
@@ -111,18 +111,25 @@ Uma fonte **80 Plus Gold** opera com eficiência acima de 90% na maior parte da 
 
 Além disso, uma fonte dimensionada com folga trabalha longe do limite, o que significa menos calor e mais vida útil. E sobra margem para adicionar discos ou qualquer outra expansão futura sem precisar trocar a fonte.
 
+### Gabinete Wisecase CK-16
+
+Aqui entra um toque de reutilização. O gabinete é um **Wisecase CK-16**, meu primeiro gabinete de PC Gamer, comprado há muitos anos. Não fazia sentido deixá-lo parado. Acabou sendo uma escolha melhor do que parecia: 4 baias de 5,25", 4 baias internas de 3,5" e mais 2 expostas - **espaço de sobra para os WD Red Plus e qualquer expansão futura**. Gabinetes modernos, costumam vir com uma ou duas baias de HD no máximo. O CK-16 resolve isso sem precisar comprar nada novo.
+
 ---
 
 ## Resumo do hardware
 
-| Componente | Modelo | Observação |
-|---|---|---|
-| Placa-mãe / CPU | Topton N5105 | TDP 10W, 4x NIC 2.5G |
-| SSD sistema | Kingston NV2 1TB NVMe | Proxmox, VMs, ISOs |
-| SSD projetos | MOVESPEED PCIe 4.0 | Node Bitcoin e testes |
-| HDs de dados | 2x WD Red Plus 4TB | ZFS Mirror |
-| Memória | 2x Corsair Vengeance 16GB DDR4 | 32GB dual channel |
-| Fonte | Cooler Master G500 Gold 500W | 80 Plus Gold |
+| Componente | Modelo | Observação | Preço unit. | Total (c/ frete) |
+|---|---|---|---|---|
+| Placa-mãe / CPU | Topton N5105 | TDP 10W, 4x NIC 2.5G | R$ 627,16 | R$ 627,16 |
+| SSD sistema | Kingston NV2 1TB NVMe | Proxmox, VMs, ISOs | R$ 258,99 | R$ 276,31 |
+| SSD projetos | MOVESPEED PCIe 4.0 | Node Bitcoin e testes | R$ 236,15 | R$ 236,15 |
+| HDs de dados | 2x WD Red Plus 4TB | ZFS Mirror | R$ 444,99 | R$ 889,98 |
+| Memória | 2x Corsair Vengeance 16GB DDR4 | 32GB dual channel | R$ 209,99 | R$ 426,33 |
+| Fonte | Cooler Master G500 Gold 500W | 80 Plus Gold | R$ 399,90 | R$ 399,90 |
+| Gabinete | Wisecase CK-16 | Reutilizado | — | — |
+| Cabo Splitter SATA 6P | — | Acessório de instalação | R$ 49,05 | R$ 49,05 |
+| **Total** | | | | **R$ 2.904,88** |
 
 ---
 

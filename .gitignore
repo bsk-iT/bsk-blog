@@ -9,3 +9,9 @@ resources/
 # Theme folder (usando Hugo Modules + _vendor)
 /themes/
 
+# Instruções para agentes de IA (não é conteúdo público)
+AGENTS.md
+
+# Rascunhos e trabalhos em andamento
+1. Tutorial - Instalacao do Proxmox VE - Home Server.md
+
