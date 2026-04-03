@@ -47,3 +47,17 @@
     align-items: center !important;
   }
 </style>
+
+<script>
+  /* Inicializa data-theme nos elementos pai do toggle ao carregar a página */
+  (function () {
+    var stored = localStorage.getItem('color-theme');
+    var defaultTheme = '{{ site.Params.theme.default | default "light" }}';
+    var theme = stored || defaultTheme;
+    /* Normaliza: qualquer valor fora de light/dark vira light */
+    if (theme !== 'dark') { theme = 'light'; }
+    document.querySelectorAll('[data-theme]').forEach(function (el) {
+      el.dataset.theme = theme;
+    });
+  })();
+</script>

@@ -1,0 +1,27 @@
+{{- $page := .context -}}
+
+{{- if hugo.IsMultilingual -}}
+  {{- /* Encontra o idioma alternativo (o que não é o atual) */ -}}
+  {{- $otherLang := "" -}}
+  {{- range site.Languages -}}
+    {{- if ne .Lang site.Language.Lang -}}
+      {{- $otherLang = .Lang -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Resolve a URL da página no outro idioma */ -}}
+  {{- $otherLink := partial "utils/lang-link" (dict "lang" $otherLang "context" $page) -}}
+
+  {{- /* Determina o código do idioma a exibir (PT ou EN) */ -}}
+  {{- $langCode := upper site.Language.Lang -}}
+
+  <div class="hx:flex hx:justify-items-start">
+    <a
+      href="{{ $otherLink }}"
+      title="{{ T "changeLanguage" | default "Change language" }}"
+      class="hx:cursor-pointer hx:rounded-md hx:text-current hx:p-2 hx:text-sm hx:font-medium hx:transition-colors hover:hx:bg-gray-100 hx:dark:hover:bg-neutral-800"
+    >
+      {{- $langCode -}}
+    </a>
+  </div>
+{{- end -}}

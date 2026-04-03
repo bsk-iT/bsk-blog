@@ -1,0 +1,25 @@
+{{- $iconHeight := .iconHeight | default 24 -}}
+{{- $class := .class | default "hx:p-2" -}}
+
+{{- /* Toggle direto: clique alterna entre light e dark sem dropdown */ -}}
+<div class="hx:flex hx:justify-items-start hx:group" data-theme="light">
+  <button
+    title="Toggle theme"
+    class="hextra-theme-toggle-direct hx:cursor-pointer hx:rounded-md hx:text-current {{ $class }}"
+    type="button"
+    aria-label="Toggle theme"
+    onclick="(function(btn){
+      var parent = btn.closest('[data-theme]');
+      var current = parent ? parent.dataset.theme : (localStorage.getItem('color-theme') || 'light');
+      var next = (current === 'dark') ? 'light' : 'dark';
+      if (typeof setTheme === 'function') { setTheme(next); }
+      localStorage.setItem('color-theme', next);
+      document.querySelectorAll('[data-theme]').forEach(function(el){ el.dataset.theme = next; });
+    })(this)"
+  >
+    <div class="hx:flex hx:items-center">
+      {{- partial "utils/icon.html" (dict "name" "sun" "attributes" (printf `height=%d class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"` $iconHeight)) -}}
+      {{- partial "utils/icon.html" (dict "name" "moon" "attributes" (printf `height=%d class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"` $iconHeight)) -}}
+    </div>
+  </button>
+</div>

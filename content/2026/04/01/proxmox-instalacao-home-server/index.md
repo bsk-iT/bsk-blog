@@ -13,7 +13,7 @@ draft: false
 description: "Passo a passo completo da instalação do Proxmox VE 8 no home server: pendrive bootável, wizard de instalação, configuração de rede, repositórios e primeiros comandos."
 ---
 
-No [post anterior](../../../03/02/home-server-por-que-montar-e-hardware-escolhido/) falei sobre os motivos que me levaram a montar um home server e detalhe cada peça do hardware escolhido. Com o hardware montado e na bancada, o próximo passo era colocar o sistema pra rodar. É aqui que o Proxmox entra.
+No [post anterior](../../../03/02/home-server-por-que-montar-e-hardware-escolhido/) falei sobre os motivos que me levaram a montar um home server e detalhe de cada peça do hardware escolhido. Com o hardware montado e na bancada, o próximo passo era colocar o sistema pra rodar. É aqui que o Proxmox entra.
 
 Este post cobre a instalação do zero: da ISO no pendrive até o sistema atualizado e pronto para receber as primeiras VMs e containers.
 

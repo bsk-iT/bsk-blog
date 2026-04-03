@@ -1,6 +1,23 @@
 # Hugo configuration file
 title: "berserk.iT"
-languageCode: "pt-BR"
+
+# Multilíngue: PT é o idioma padrão (sem prefixo de URL), EN fica em /en/
+defaultContentLanguage: pt
+defaultContentLanguageInSubdir: false
+
+languages:
+  pt:
+    languageCode: "pt-BR"
+    languageName: "PT"
+    weight: 1
+    params:
+      description: "Blog técnico de Bruno Cubero sobre homelab, Linux, hardware e tecnologia."
+  en:
+    languageCode: "en"
+    languageName: "EN"
+    weight: 2
+    params:
+      description: "Bruno Cubero's technical blog about homelab, Linux, hardware and technology."
 
 # Para blog, normalmente faz sentido expor RSS na home
 outputs:
@@ -30,25 +47,43 @@ menu:
     - name: About
       pageRef: /about
       weight: 2
-    - name: Search
+    - name: LinkedIn
       weight: 3
+      url: "https://www.linkedin.com/in/brunocuberoti/"
       params:
-        type: search
-    - name: RSS
-      weight: 4
-      url: "/index.xml"
-      params:
-        icon: rss
+        icon: linkedin
     - name: GitHub
-      weight: 5
+      weight: 4
       url: "https://github.com/bsk-iT"
       params:
         icon: github
     - name: Twitter
-      weight: 6
+      weight: 5
       url: "https://x.com/brunOcuberO"
       params:
         icon: x-twitter
+    - name: Portfolio
+      weight: 6
+      url: "https://portfolio-bsk.vercel.app/"
+      params:
+        icon: briefcase
+    - name: Search
+      weight: 7
+      params:
+        type: search
+    - name: RSS
+      weight: 8
+      url: "/index.xml"
+      params:
+        icon: rss
+    - name: Theme
+      weight: 9
+      params:
+        type: theme-toggle
+    - name: Language
+      weight: 10
+      params:
+        type: language-switch
 
 params:
   navbar:
@@ -74,5 +109,3 @@ params:
   author:
     name: "Bruno Cubero"
     email: "bruno.cubero@proton.me"
-
-  description: "Blog técnico de Bruno Cubero sobre homelab, Linux, hardware e tecnologia."
