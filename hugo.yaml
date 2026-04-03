@@ -18,7 +18,7 @@ module:
 markup:
   goldmark:
     renderer:
-      unsafe: true
+      unsafe: false
   highlight:
     noClasses: false
 
@@ -64,7 +64,7 @@ params:
 
   # Opcional, mas útil se você pretende embedar vídeos
   youtubeDefaults:
-    iframeAllowList: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    iframeAllowList: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy: "no-referrer"
     iframeStyle: "border:0; width:100%; aspect-ratio:16/9;"
 

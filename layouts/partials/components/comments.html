@@ -2,7 +2,7 @@
 {{- with .Site.Config.Services.Disqus.Shortname }}
 {{- $shortname := . }}
 <div id="disqus_wrapper">
-    <iframe id="disqus_iframe" style="width: 100%; border: none; min-height: 300px;"></iframe>
+    <iframe id="disqus_iframe" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" style="width: 100%; border: none; min-height: 300px;"></iframe>
 </div>
 <script>
     (function() {
@@ -39,15 +39,33 @@
 </html>`;
 
         var iframe = document.getElementById('disqus_iframe');
+        var resizeInterval = null;
         iframe.srcdoc = iframeContent;
 
         // Adjust iframe height to fit content
         iframe.onload = function() {
-            setInterval(function() {
+            if (resizeInterval) {
+                clearInterval(resizeInterval);
+            }
+
+            var lastHeight = 0;
+            var stableTicks = 0;
+
+            resizeInterval = setInterval(function() {
                 try {
                     var height = iframe.contentDocument.body.scrollHeight;
                     if (height > 100) {
                         iframe.style.height = height + 'px';
+                        if (height === lastHeight) {
+                            stableTicks += 1;
+                            if (stableTicks >= 4) {
+                                clearInterval(resizeInterval);
+                                resizeInterval = null;
+                            }
+                        } else {
+                            lastHeight = height;
+                            stableTicks = 0;
+                        }
                     }
                 } catch(e) {}
             }, 500);

@@ -56,7 +56,7 @@ Sugestões, correções e pequenas melhorias são bem-vindas.
 
 ## Contato
 
-- Email: [bruno.cubero@proton.me](mailto:bruno.cubero@proton.me)
+- Contato: via GitHub ou abrindo uma issue no repositório.
 
 ## Licença
 

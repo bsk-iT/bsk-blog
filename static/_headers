@@ -1,0 +1,7 @@
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://disqus.com https://*.disqus.com https://*.disquscdn.com; style-src 'self' 'unsafe-inline'; img-src * data: blob:; frame-src https://*.disqus.com https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://disqus.com https://*.disqus.com https://*.disquscdn.com; object-src 'none'; base-uri 'self'; form-action 'self' https://disqus.com;
