@@ -1,7 +1,7 @@
 ---
 title: "Home Server - Por que montar e o hardware escolhido"
 date: 2026-03-02T15:00:00-03:00
-slug: home-server-por-que-montar-e-hardware-escolhido
+slug: "home-server-por-que-montar-e-hardware-escolhido"
 tags:
   - homelab
   - home-server
