@@ -29,7 +29,7 @@ It runs 100% locally, no cloud, no account, no subscription. You own the server 
 If you already know Plex or Emby, Jellyfin is the free alternative:
 
 | | Jellyfin | Plex | Emby |
-|---|---|---|---|
+| :--- | :--- | :--- | :--- |
 | Price | Free | Freemium | Paid |
 | Code | Open-source | Proprietary | Proprietary |
 | Limitations | None | Paid features | Paid features |
@@ -292,8 +292,8 @@ Go to **Admin Dashboard → Libraries → Add Media Library**.
 
 ### Movie library
 
-| Setting | Value |
-|---|---|
+| Setting | Definition |
+| :--- | :--- |
 | Content type | Movies |
 | Display name | Movies |
 | Folders | `/home/berserk/media/movies` |
@@ -318,16 +318,16 @@ Click **OK**. The scan starts automatically.
 
 Same process, changing:
 
-| Setting | Value |
-|---|---|
+| Setting | Definition |
+| :--- | :--- |
 | Content type | Shows |
 | Display name | Series |
 | Folders | `/home/berserk/media/series` |
 
 ### Anime library
 
-| Setting | Value |
-|---|---|
+| Setting | Definition |
+| :--- | :--- |
 | Content type | Shows |
 | Display name | Anime |
 | Folders | `/home/berserk/media/anime` |
@@ -434,8 +434,8 @@ systemctl restart jellyfin
 
 Go to **Admin Dashboard → Playback → Transcoding**:
 
-| Setting | Value |
-|---|---|
+| Setting | Definition |
+| :--- | :--- |
 | Hardware acceleration | Intel Quick Sync (QSV) |
 | Enable hardware decoding for | H264, HEVC, MPEG2, VC1, VP8, VP9 |
 | Enable hardware encoding | ✅ |
