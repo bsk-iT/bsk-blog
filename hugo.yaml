@@ -105,9 +105,7 @@ languages:
 outputs:
   home: [HTML, RSS]
 
-services:
-  disqus:
-    shortname: "berserk.iT"
+services: {}
 
 # import hextra as module
 module:
@@ -145,3 +143,18 @@ params:
   author:
     name: "Bruno Cubero"
     email: "bruno.cubero@proton.me"
+
+  comments:
+    enable: true
+    type: "giscus"
+    giscus:
+      repo: "bsk-iT/bsk-blog"
+      repoId: "R_kgDOQ4pEwQ"
+      category: "Announcements"
+      categoryId: "DIC_kwDOQ4pEwc4C7Ttu"
+      mapping: "pathname"
+      strict: "0"
+      reactionsEnabled: "0"
+      emitMetadata: "0"
+      inputPosition: "bottom"
+      lang: "pt"

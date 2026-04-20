@@ -14,9 +14,9 @@
         {{- end -}}
         <div class="hx:text-center hx:mt-4 hx:text-sm hx:text-gray-500 hx:dark:text-gray-400">
           {{- with .Date -}}<em>{{ partial "utils/format-date" . }}</em>{{- end -}}
-          {{- with .Site.Config.Services.Disqus.Shortname }}
+          {{- with site.Params.comments.giscus }}
           <span class="hx:mx-2">·</span>
-          <a href="#disqus_wrapper" class="hx:text-gray-400 hx:dark:text-gray-500 hx:hover:text-primary-600 hx:dark:hover:text-primary-400 hx:transition-colors">
+          <a href="#giscus-hextra-bb112b9f807c37c1752e5da6a1652a29" class="hx:text-gray-400 hx:dark:text-gray-500 hx:hover:text-primary-600 hx:dark:hover:text-primary-400 hx:transition-colors">
             💬 Participe da Discussão
           </a>
           {{- end -}}

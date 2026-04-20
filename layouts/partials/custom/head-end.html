@@ -1,5 +1,5 @@
 {{- /* Segurança: CSP mínima e headers via meta para GitHub Pages */ -}}
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://disqus.com https://*.disqus.com https://*.disquscdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src * data: blob:; frame-src https://*.disqus.com https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://disqus.com https://*.disqus.com https://*.disquscdn.com; object-src 'none'; base-uri 'self'; form-action 'self' https://disqus.com;" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src * data: blob:; frame-src https://giscus.app https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://giscus.app https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self';" />
 <meta http-equiv="X-Content-Type-Options" content="nosniff" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 
@@ -92,6 +92,13 @@
     opacity: 1;
   }
 
+  /* Giscus: ocupa largura total do container */
+  .giscus,
+  .giscus-frame {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
   /* Aviso: este seletor depende de classes internas do Hextra e pode quebrar em atualizações. */
   /* Centraliza o footer em todos os tamanhos de tela */
   .hextra-footer > div[class*="hextra-max-footer-width"] {
@@ -113,6 +120,48 @@
     if (theme !== 'dark') { theme = 'light'; }
     document.querySelectorAll('[data-theme]').forEach(function (el) {
       el.dataset.theme = theme;
+    });
+  })();
+
+  /* Sincroniza tema do Giscus via MutationObserver no <html class="dark|light">
+     Garante que o postMessage é enviado APÓS o Hextra atualizar o DOM,
+     evitando race condition com o click listener do vendor/giscus.html */
+  (function () {
+    function getGiscusIframe() {
+      return document.querySelector('iframe.giscus-frame')
+          || document.querySelector('iframe[src*="giscus.app"]');
+    }
+
+    function sendGiscusTheme(theme) {
+      var iframe = getGiscusIframe();
+      if (!iframe) return;
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: theme } } },
+        'https://giscus.app'
+      );
+    }
+
+    function syncTheme() {
+      var isDark = document.documentElement.classList.contains('dark');
+      var theme = isDark ? 'dark' : 'light';
+      /* Tenta imediatamente; se iframe ainda não carregou, tenta novamente */
+      if (!getGiscusIframe()) {
+        setTimeout(function () { sendGiscusTheme(theme); }, 1000);
+      } else {
+        sendGiscusTheme(theme);
+      }
+    }
+
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (mutation.attributeName === 'class') {
+          syncTheme();
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      observer.observe(document.documentElement, { attributes: true });
     });
   })();
 </script>
