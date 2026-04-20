@@ -1,6 +1,6 @@
 ---
-title: About
-type: about
+title: Sobre
+type: Sobre
 ---
 
 Eu sou Bruno Cubero, um geek entusiasta por tecnologia desde pequeno. Meu ponto de partida foi na empresa do meu pai: **Windows 98**, **Pentium III**… bons tempos. Eu adorava “fuçar” tudo no sistema. E, claro, jogar os clássicos: **Pinball**, **Paciência** e **Campo Minado**, quem nunca?

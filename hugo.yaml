@@ -12,12 +12,94 @@ languages:
     weight: 1
     params:
       description: "Blog técnico de Bruno Cubero sobre homelab, Linux, hardware e tecnologia."
+    menu:
+      main:
+        - name: Início
+          pageRef: /
+          weight: 1
+        - name: Sobre
+          pageRef: /about
+          weight: 2
+        - name: LinkedIn
+          weight: 3
+          url: "https://www.linkedin.com/in/brunocuberoti/"
+          params:
+            icon: linkedin
+        - name: GitHub
+          weight: 4
+          url: "https://github.com/bsk-iT"
+          params:
+            icon: github
+        - name: Twitter
+          weight: 5
+          url: "https://x.com/brunOcuberO"
+          params:
+            icon: x-twitter
+        - name: Portfolio
+          weight: 6
+          url: "https://portfolio-bsk.vercel.app/"
+          params:
+            icon: briefcase
+        - name: Search
+          weight: 7
+          params:
+            type: search
+        - name: RSS
+          weight: 8
+          url: "/index.xml"
+          params:
+            icon: rss
+        - name: Theme
+          weight: 9
+          params:
+            type: theme-toggle
   en:
     languageCode: "en"
     languageName: "EN"
     weight: 2
     params:
       description: "Bruno Cubero's technical blog about homelab, Linux, hardware and technology."
+    menu:
+      main:
+        - name: Home
+          pageRef: /
+          weight: 1
+        - name: About
+          pageRef: /about
+          weight: 2
+        - name: LinkedIn
+          weight: 3
+          url: "https://www.linkedin.com/in/brunocuberoti/"
+          params:
+            icon: linkedin
+        - name: GitHub
+          weight: 4
+          url: "https://github.com/bsk-iT"
+          params:
+            icon: github
+        - name: Twitter
+          weight: 5
+          url: "https://x.com/brunOcuberO"
+          params:
+            icon: x-twitter
+        - name: Portfolio
+          weight: 6
+          url: "https://portfolio-bsk.vercel.app/"
+          params:
+            icon: briefcase
+        - name: Search
+          weight: 7
+          params:
+            type: search
+        - name: RSS
+          weight: 8
+          url: "/index.xml"
+          params:
+            icon: rss
+        - name: Theme
+          weight: 9
+          params:
+            type: theme-toggle
 
 # Para blog, normalmente faz sentido expor RSS na home
 outputs:
@@ -38,52 +120,6 @@ markup:
       unsafe: false
   highlight:
     noClasses: false
-
-menu:
-  main:
-    - name: Início
-      pageRef: /
-      weight: 1
-    - name: About
-      pageRef: /about
-      weight: 2
-    - name: LinkedIn
-      weight: 3
-      url: "https://www.linkedin.com/in/brunocuberoti/"
-      params:
-        icon: linkedin
-    - name: GitHub
-      weight: 4
-      url: "https://github.com/bsk-iT"
-      params:
-        icon: github
-    - name: Twitter
-      weight: 5
-      url: "https://x.com/brunOcuberO"
-      params:
-        icon: x-twitter
-    - name: Portfolio
-      weight: 6
-      url: "https://portfolio-bsk.vercel.app/"
-      params:
-        icon: briefcase
-    - name: Search
-      weight: 7
-      params:
-        type: search
-    - name: RSS
-      weight: 8
-      url: "/index.xml"
-      params:
-        icon: rss
-    - name: Theme
-      weight: 9
-      params:
-        type: theme-toggle
-    - name: Language
-      weight: 10
-      params:
-        type: language-switch
 
 params:
   navbar:
