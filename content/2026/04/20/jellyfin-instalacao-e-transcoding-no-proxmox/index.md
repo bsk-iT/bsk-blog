@@ -294,8 +294,8 @@ Acesse **Admin Dashboard → Libraries → Add Media Library**.
 
 ### Biblioteca de filmes
 
-| Configuração | Valor |
-|---|---|
+| Configuração | Definição |
+| :--- | :--- |
 | Content type | Movies |
 | Display name | Filmes |
 | Folders | `/home/berserk/media/filmes` |
@@ -320,16 +320,16 @@ Clique em **OK**. O scan inicia automaticamente.
 
 Mesmo processo, mudando:
 
-| Configuração | Valor |
-|---|---|
+| Configuração | Definição |
+| :--- | :--- |
 | Content type | Shows |
 | Display name | Séries |
 | Folders | `/home/berserk/media/series` |
 
 ### Biblioteca de animes
 
-| Configuração | Valor |
-|---|---|
+| Configuração | Definição |
+| :--- | :--- |
 | Content type | Shows |
 | Display name | Animes |
 | Folders | `/home/berserk/media/animes` |
@@ -436,8 +436,8 @@ O `vainfo` deve retornar uma lista de profiles (H264, HEVC, VP9, etc.). Se retor
 
 Acesse **Admin Dashboard → Playback → Transcoding**:
 
-| Configuração | Valor |
-|---|---|
+| Configuração | Definição |
+| :--- | :--- |
 | Hardware acceleration | Intel Quick Sync (QSV) |
 | Enable hardware decoding for | H264, HEVC, MPEG2, VC1, VP8, VP9 |
 | Enable hardware encoding | ✅ |
