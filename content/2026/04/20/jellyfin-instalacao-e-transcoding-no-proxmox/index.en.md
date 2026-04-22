@@ -476,6 +476,39 @@ In Proxmox, select the Jellyfin container and watch the CPU graph:
 
 The difference is massive.
 
+### But when does Jellyfin actually need to transcode?
+
+The example above was tested through a browser, and that matters. Browsers have limited support for HEVC and HDR. When the client can't play the original file, Jellyfin converts everything in real time: video, color (HDR → SDR), and audio. That's why CPU usage climbs.
+
+> With a dedicated client that natively supports the format, the behavior is completely different.
+
+Testing the same 4K HEVC HDR file with a Fire TV Stick 4K + Echo Studio, Jellyfin went into **Direct Play**: direct playback of the original file, no conversion at all, using less than 1% CPU.
+
+- **Browser — Active transcoding (4K HEVC HDR):**
+
+![CPU during browser transcoding](/images/test-navegador.png)
+
+- **Fire TV Stick 4K — Direct Play (4K HEVC HDR):**
+
+![CPU during Direct Play via Fire TV](/images/test-firetv.png)
+
+| Client | Pipeline | CPU |
+| :--- | :--- | :--- |
+| Browser | Transcoding (video + HDR + audio) | ~14% |
+| Fire TV Stick 4K | Direct Play | < 1% |
+
+A well-configured media server doesn't process media, it delivers it. The goal isn't to transcode well, it's to not transcode at all.
+
+Transcoding isn't inherent to 4K. It happens when there's a mismatch between **file, client, and configuration.** If the client supports the codec, HDR, and audio of the file, Jellyfin does Direct Play and the CPU barely moves. The problem was never the 4K, it's the player not being up to the task.
+
+This also breaks the common fear that "4K HEVC HDR destroys colors on other devices." It only does that if Jellyfin has to convert. If the client supports it, the file arrives untouched.
+
+**What forces transcoding:**
+- Browsers (limited HEVC/HDR support)
+- Audio incompatible with the client (TrueHD, DTS-HD)
+- PGS subtitles in some cases
+- Client without HDR support
+
 ---
 
 ## Troubleshooting

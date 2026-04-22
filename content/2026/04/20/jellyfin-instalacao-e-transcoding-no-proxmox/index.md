@@ -479,6 +479,39 @@ No Proxmox, selecione o container Jellyfin e observe o gráfico de CPU:
 
 A diferença é brutal.
 
+### Mas quando o Jellyfin realmente precisa transcodificar?
+
+O exemplo acima foi testado via navegador, e por que isso importa? Navegadores têm suporte limitado a HEVC e HDR. Quando o cliente não consegue reproduzir o arquivo original, o Jellyfin converte tudo em tempo real: vídeo, cor (HDR → SDR) e áudio. É por isso que a CPU aumenta o consumo.
+
+> Com um cliente dedicado que suporta o formato nativamente, o comportamento é diferente.
+
+Testando o mesmo arquivo 4K HEVC HDR com Fire TV Stick 4K + Echo Studio, o Jellyfin entrou em **Direct Play**: reprodução direta do arquivo original, sem conversão nenhuma, consumindo menos de 1% da CPU.
+
+- **Navegador - Transcodificação ativa (4K HEVC HDR):**
+
+![CPU durante transcodificação via navegador](/images/test-navegador.png)
+
+- **Fire TV Stick 4K - Direct Play (4K HEVC HDR):**
+
+![CPU durante Direct Play via Fire TV](/images/test-firetv.png)
+
+| Cliente | Pipeline | CPU |
+| :--- | :--- | :--- |
+| Navegador | Transcodificação (vídeo + HDR + áudio) | ~14% |
+| Fire TV Stick 4K | Direct Play | < 1% |
+
+Um media server bem configurado não processa mídia, ele entrega. O objetivo não é só transcodificar bem, é não precisar transcodificar.
+
+Transcodificação não é algo inerente ao 4K. Ela ocorre quando há incompatibilidade entre **arquivo, cliente e configuração.** Se o cliente suporta o codec, o HDR e o áudio do arquivo, o Jellyfin faz Direct Play e a CPU nem acorda. O problema nunca foi o 4K, é o player não estar à altura do conteúdo.
+
+Isso também desmonta o medo comum de que "4K HEVC HDR estraga as cores em outros dispositivos". Só estraga se o Jellyfin precisar converter. Se o cliente suporta, o arquivo chega intacto.
+
+**O que força transcodificação:**
+- Navegadores (suporte limitado a HEVC/HDR)
+- Áudio incompatível com o cliente (TrueHD, DTS-HD)
+- Legendas PGS em alguns casos
+- Cliente sem suporte a HDR
+
 ---
 
 ## Troubleshooting
