@@ -121,8 +121,13 @@ markup:
 
 params:
   navbar:
-    displayTitle: true
-    displayLogo: false
+    displayTitle: false
+    displayLogo: true
+    logo:
+      path: images/bsk-black.svg
+      dark: images/bsk-white.svg
+      width: "28"
+      height: "28"
 
   footer:
     displayCopyright: true
