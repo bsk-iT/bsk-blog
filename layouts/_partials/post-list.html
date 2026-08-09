@@ -1,10 +1,10 @@
 {{- range .groups -}}
   <h2 id="{{ .label | anchorize }}">{{ .label }}</h2>
-  <ul>
+  <ul class="post-list">
     {{- range .posts -}}
       {{- $post := . -}}
-      <li class="hx:mb-10">
-        <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+      <li>
+        <a class="post-title-link" href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
         {{- with $post.Params.tags -}}
           <div class="hx:mt-1 hx:flex hx:flex-wrap">
             {{ partial "tags.html" (dict "context" $post) }}

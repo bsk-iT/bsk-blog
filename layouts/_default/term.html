@@ -12,11 +12,11 @@
         </p>
         <div class="hx:mb-16"></div>
         <div class="content">
-          <ul>
+          <ul class="post-list">
             {{- range .Pages.ByDate.Reverse -}}
               {{- $post := . -}}
-              <li class="hx:mb-10">
-                <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+              <li>
+                <a class="post-title-link" href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
                 {{- with $post.Params.tags -}}
                   <div class="hx:mt-1 hx:flex hx:flex-wrap">
                     {{ partial "tags.html" (dict "context" $post) }}

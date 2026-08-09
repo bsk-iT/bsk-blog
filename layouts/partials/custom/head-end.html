@@ -20,18 +20,48 @@
   :root {
     --primary-hue: 256deg;
     --primary-saturation: 100%;
-    --primary-lightness: 74%;
+    --primary-lightness: 64%;
   }
   .dark {
     --primary-hue: 256deg;
     --primary-saturation: 100%;
-    --primary-lightness: 74%;
+    --primary-lightness: 64%;
   }
   .content a {
-    color: #9d7aff;
+    color: #7847ff;
   }
   .content a:hover {
     text-decoration: underline;
+  }
+
+  /* Listagem de posts (home e paginas de tag): titulo preto/texto normal,
+     violeta so no hover; tags em cinza claro; espacamento generoso entre posts.
+     Selectors com classe propria pra vencer a tipografia padrao do .content
+     (.content :where(ul) li usa margin-block; .content a colore tudo de violeta). */
+  .content ul.post-list li {
+    margin-block: 0 2.75rem;
+  }
+  .content a.post-title-link {
+    color: inherit;
+  }
+  .content a.post-title-link:hover {
+    color: #7847ff;
+  }
+  .content a.tag-link,
+  a.tag-link {
+    color: #6b7280;
+  }
+  .dark .content a.tag-link,
+  .dark a.tag-link {
+    color: #9ca3af;
+  }
+  .content a.tag-link:hover,
+  a.tag-link:hover {
+    color: #374151;
+  }
+  .dark .content a.tag-link:hover,
+  .dark a.tag-link:hover {
+    color: #e5e7eb;
   }
 </style>
 
