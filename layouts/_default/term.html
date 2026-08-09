@@ -1,0 +1,32 @@
+{{ define "main" }}
+  <div class='hx:mx-auto hx:flex hextra-max-page-width'>
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
+    {{ partial "toc.html" (dict "Params" (dict "toc" false)) }}
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+        <div class="hx:mt-1.5"></div>
+        <h1 class="hx:text-center hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">#{{ .Data.Term }}</h1>
+        {{- $count := len .Pages -}}
+        <p class="hx:text-center hx:mt-2 hx:text-sm hx:text-gray-500 hx:dark:text-gray-400">
+          {{ $count }} {{ if eq $count 1 }}post{{ else }}posts{{ end }}
+        </p>
+        <div class="hx:mb-16"></div>
+        <div class="content">
+          <ul>
+            {{- range .Pages.ByDate.Reverse -}}
+              {{- $post := . -}}
+              <li class="hx:mb-10">
+                <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+                {{- with $post.Params.tags -}}
+                  <div class="hx:mt-1 hx:flex hx:flex-wrap">
+                    {{ partial "tags.html" (dict "context" $post) }}
+                  </div>
+                {{- end -}}
+              </li>
+            {{- end -}}
+          </ul>
+        </div>
+      </main>
+    </article>
+  </div>
+{{ end }}

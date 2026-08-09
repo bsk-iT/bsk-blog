@@ -1,0 +1,26 @@
+{{- $monthNames := dict
+  "pt" (slice "Janeiro" "Fevereiro" "Março" "Abril" "Maio" "Junho" "Julho" "Agosto" "Setembro" "Outubro" "Novembro" "Dezembro")
+  "en" (slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December")
+-}}
+{{- $months := index $monthNames (site.Language.Lang | default "en") | default (index $monthNames "en") -}}
+{{- $posts := where site.RegularPages "Params.tags" "!=" nil -}}
+{{- $posts = $posts.ByDate.Reverse -}}
+{{- $groups := slice -}}
+{{- $currentLabel := "" -}}
+{{- $currentPosts := slice -}}
+{{- range $posts -}}
+  {{- $post := . -}}
+  {{- $label := printf "%d - %s" $post.Date.Year (index $months (sub (int $post.Date.Month) 1)) -}}
+  {{- if ne $label $currentLabel -}}
+    {{- if ne $currentLabel "" -}}
+      {{- $groups = $groups | append (dict "label" $currentLabel "posts" $currentPosts) -}}
+    {{- end -}}
+    {{- $currentLabel = $label -}}
+    {{- $currentPosts = slice -}}
+  {{- end -}}
+  {{- $currentPosts = $currentPosts | append $post -}}
+{{- end -}}
+{{- if ne $currentLabel "" -}}
+  {{- $groups = $groups | append (dict "label" $currentLabel "posts" $currentPosts) -}}
+{{- end -}}
+{{- return $groups -}}

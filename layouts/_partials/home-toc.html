@@ -1,0 +1,17 @@
+{{- $onThisPage := (T "onThisPage") | default "On this page" -}}
+<nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
+  {{- if .groups -}}
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4">
+      <p class="hx:mb-4 hx:font-semibold hx:tracking-tight">{{ $onThisPage }}</p>
+      <ul>
+        {{- range .groups -}}
+          <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+            <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:w-full hx:break-words" href="#{{ .label | anchorize }}">
+              {{- .label -}}
+            </a>
+          </li>
+        {{- end -}}
+      </ul>
+    </div>
+  {{- end -}}
+</nav>

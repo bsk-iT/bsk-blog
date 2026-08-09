@@ -1,27 +1,16 @@
-{{- $monthNames := dict
-  "pt" (slice "Janeiro" "Fevereiro" "Março" "Abril" "Maio" "Junho" "Julho" "Agosto" "Setembro" "Outubro" "Novembro" "Dezembro")
-  "en" (slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December")
--}}
-{{- $months := index $monthNames (site.Language.Lang | default "en") | default (index $monthNames "en") -}}
-{{- $posts := where site.RegularPages "Params.tags" "!=" nil -}}
-{{- $posts = $posts.ByDate.Reverse -}}
-{{- $currentGroup := "" -}}
-{{- range $posts -}}
-  {{- $post := . -}}
-  {{- $groupLabel := printf "%d - %s" $post.Date.Year (index $months (sub (int $post.Date.Month) 1)) -}}
-  {{- if ne $groupLabel $currentGroup -}}
-    {{- if ne $currentGroup "" -}}</ul>{{- end -}}
-    {{- $currentGroup = $groupLabel -}}
-    <h2>{{ $groupLabel }}</h2>
-    <ul>
-  {{- end -}}
-  <li class="hx:mb-4">
-    <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
-    {{- with $post.Params.tags -}}
-      <div class="hx:mt-1 hx:flex hx:flex-wrap">
-        {{ partial "tags.html" (dict "context" $post) }}
-      </div>
+{{- range .groups -}}
+  <h2 id="{{ .label | anchorize }}">{{ .label }}</h2>
+  <ul>
+    {{- range .posts -}}
+      {{- $post := . -}}
+      <li class="hx:mb-10">
+        <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+        {{- with $post.Params.tags -}}
+          <div class="hx:mt-1 hx:flex hx:flex-wrap">
+            {{ partial "tags.html" (dict "context" $post) }}
+          </div>
+        {{- end -}}
+      </li>
     {{- end -}}
-  </li>
+  </ul>
 {{- end -}}
-{{- if ne $currentGroup "" -}}</ul>{{- end -}}
