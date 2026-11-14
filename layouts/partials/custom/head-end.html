@@ -67,6 +67,24 @@
     padding-block: 1.5rem;
   }
 
+  /* O min-height do Hextra so desconta a navbar, entao paginas curtas (home)
+     ganhavam scroll do tamanho do rodape. Rodape = 4rem (padding 1.5rem x2 +
+     linha de 1rem do text-xs); a safe-area cobre o recuo do iOS.
+     Aviso: depende do nome da classe utilitaria do Hextra. */
+  article.hx\:min-h-\[calc\(100vh-var\(--navbar-height\)\)\] {
+    min-height: calc(100vh - var(--navbar-height) - 4rem - env(safe-area-inset-bottom));
+  }
+
+  /* A sidebar placeholder (coluna vazia so pra centralizar o conteudo no xl)
+     tem altura fixa de 100vh-navbar e tambem empurrava o rodape para baixo da
+     dobra. Vazia no desktop, so precisa da largura. hx:xl:block so existe no
+     modo placeholder; abaixo de 48rem ela vira o menu mobile e fica intacta. */
+  @media (min-width: 48rem) {
+    .hextra-sidebar-container.hx\:xl\:block .hextra-scrollbar {
+      height: auto;
+    }
+  }
+
   .content a {
     color: #3b5c8a;
   }
