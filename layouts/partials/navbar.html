@@ -16,11 +16,26 @@
   ></div>
 
   <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
-    {{ partial "navbar-title.html" . }}
-
     {{- $currentPage := . -}}
+    <div class="nav-left">
+      {{ partial "navbar-title.html" . }}
+      {{- range .Site.Menus.main -}}
+        {{- if and (not .Params.type) (not .Params.icon) -}}
+          {{- $link := .URL -}}
+          {{- with .PageRef -}}
+            {{- if hasPrefix . "/" -}}
+              {{- $link = relLangURL (strings.TrimPrefix "/" .) -}}
+            {{- end -}}
+          {{- end -}}
+          {{- partial "navbar-link.html" (dict "currentPage" $currentPage "link" $link "external" (strings.HasPrefix $link "http") "item" .) -}}
+        {{- end -}}
+      {{- end -}}
+    </div>
+
     {{- range .Site.Menus.main -}}
-      {{- if eq .Params.type "search" -}}
+      {{- if and (not .Params.type) (not .Params.icon) -}}
+        {{- continue -}}
+      {{- else if eq .Params.type "search" -}}
         {{- partial "search.html" (dict "params" .Params) -}}
       {{- else -}}
         {{- $link := .URL -}}

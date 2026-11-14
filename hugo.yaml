@@ -131,7 +131,6 @@ params:
 
   footer:
     displayCopyright: true
-    displayPoweredBy: true
 
   editURL:
     enable: false

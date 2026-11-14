@@ -39,7 +39,8 @@
   }
 
   /* Paleta escura quente (referencia: akitaonrails.github.io):
-     preto vira carvao morno e o texto de leitura vira sepia claro.
+     preto vira carvao morno e o texto de leitura vira quase branco morno
+     (#ece9e4, 14.7:1 sobre #1a1714; branco puro causa halo em fundo escuro).
      As tres variaveis --hx-color-* cobrem body, navbar, footer e dropdowns. */
   .dark {
     --hx-color-dark: #1a1714;
@@ -47,7 +48,23 @@
     --hx-color-neutral-900: #23201c;
   }
   .dark body {
-    color: #e8e2d6;
+    color: #ece9e4;
+  }
+
+  /* Navbar: links de texto (Inicio/Sobre) agrupados a esquerda, junto do logo.
+     O margin-inline-end:auto empurra os icones para a direita. */
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-inline-end: auto;
+  }
+  .nav-left > a {
+    margin-inline: 0;
+  }
+
+  .footer-copyright {
+    padding-block: 1.5rem;
   }
 
   .content a {
@@ -176,16 +193,6 @@
   .giscus-frame {
     width: 100% !important;
     min-width: 0 !important;
-  }
-
-  /* Aviso: este seletor depende de classes internas do Hextra e pode quebrar em atualizações. */
-  /* Centraliza o footer em todos os tamanhos de tela */
-  .hextra-footer > div[class*="hextra-max-footer-width"] {
-    justify-content: center !important;
-  }
-
-  .hextra-footer > div[class*="hextra-max-footer-width"] > div {
-    align-items: center !important;
   }
 </style>
 
